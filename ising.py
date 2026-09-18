@@ -2,7 +2,6 @@ import numpy as np
 import math
 import pyqtgraph as pg
 from pyqtgraph.Qt import QtCore, QtWidgets
-from PyQt6.QtCore import Qt
 
 # In the real world, the values of the energy stored in individual atoms, the Boltzmann constant, and the J-coupling constant are very very small
 # If I was to set the values of these parameters in the code to their real world values, the code would break down
