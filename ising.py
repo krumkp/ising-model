@@ -1,5 +1,7 @@
 import numpy as np
 import math
+import pyqtgraph as pg
+from pyqtgraph.Qt import QtCore, QtWidgets
 
 # In the real world, the values of the energy stored in individual atoms, the Boltzmann constant, and the J-coupling constant are very very small
 # If I was to set the values of these parameters in the code to their real world values, the code would break down
@@ -9,16 +11,31 @@ import math
 # Also, since I'm ignoring the physical values of these constants, I also have to ignore the actual Kelvin scale for temperature
 # T here is just an arbitrary "hotness" indicator, taking values between 1 and 15.
 # I have left the parameters themselves in the calculations for physical clarity
+
+# app = QtWidgets.QApplication([])
+# win = QtWidgets.QWidget()
+# win.setWindowTitle('Ising Model Animation')
+# layout = QtWidgets.QVBoxLayout()
+# win.setLayout(layout)
+# plot_widget = pg.PlotWidget()
+# layout.addWidget(plot_widget)
+# img = pg.ImageItem()
+# plot_widget.addItem(img)
+
+# # slider = QtWidgets.QSlider(QtCore.Qt.Horizontal)
+# # slider.setMinimum(1)
+# # slider.setMaximum(100)
+# # slider.setValue(23)
+# # layout.addWidget(slider)
+
 Kb = 1 
 J = 1
-size = [0, 0]
-size[0] = int(input("Size of square grid: "))
-size[1] = size[0]
+size = int(input("Size of square grid: "))
 a = [-1, 1]
 T = 8
-grid = np.random.choice(a, size=(size[0], size[1]))
-i = np.random.randint(0, high=(size[1]))
-j = np.random.randint(0, high=(size[1]))
+grid = np.random.choice(a, size=(size, size))
+i = np.random.randint(0, high=(size))
+j = np.random.randint(0, high=(size))
 
 print(i, j, grid, grid[i,j], sep='\n')
 
@@ -55,3 +72,6 @@ else:
         None
 
 print(up, down, left, right, delta_E, grid, res, sep='\n')
+
+# win.show()
+# app.exec()
