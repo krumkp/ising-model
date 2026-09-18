@@ -9,7 +9,7 @@ from pyqtgraph.Qt import QtCore, QtWidgets
 # Since the energy needed to flip the spin of an atom is of about the same order as the Boltzmann constant (10e-23), their ratio is around 1
 # That is why I am setting them both to 1
 # Also, since I'm ignoring the physical values of these constants, I also have to ignore the actual Kelvin scale for temperature
-# T here is just an arbitrary "hotness" indicator, taking values between 1 and 15.
+# T here is just an arbitrary "hotness" indicator, taking values between 1 and 4.
 # I have left the parameters themselves in the calculations for physical clarity
 
 # pyqtgraph and pyqt stuff. i have no idea if im doing things the most optimal way or not. took me basically a whole day to figure this stuff out
