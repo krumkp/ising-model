@@ -2,7 +2,7 @@ The Ising model (or Lenz–Ising model), named after the physicists Ernst Ising 
 
 Copy-pasted from [Wikipedia](https://en.wikipedia.org/wiki/Ising_model)
 
-In short, this program uses Monte Carlo and Markov Chain methods to simulate this happening in a 2D grid. The Monte Carlo part is, instead of computing the whole grid every time, the computer chooses a random element from it, then decides whether to flip the spin or not. The decision is based on two factors: 1. The energy difference between its current state and its flipped state, and 2. The surrounding temperature.
+In short, this program uses Monte Carlo methods to simulate this happening in a 2D grid. Instead of computing the whole grid every time, the computer chooses a random element from it, then decides whether to flip the spin or not. The decision is based on two factors: 1. The energy difference between its current state and its flipped state, and 2. The surrounding temperature.
 
 If flipping would lower the energy of the atom's "neighbourhood" (the 4 elements which directly surround it), then it goes through. If the energy difference is 0, it also flips. However, if flipping would raise the energy of the neighbourhood, it takes into account the temperature of the environment. In a high temperature, flipping happens more frequently, than in lower temperatures. The way this is decided is through the Boltzmann factor $e^\frac{-\Delta E}{kT}$, k being the Boltzmann constant. In my code, I compare this value to a randomly generated number between 0 and 1. If the Boltzmann factor is bigger, the flip goes through. If it's smaller, then the atom's spin stays the same. Then this algorithm repeats about once every 0.02 milliseconds.
 
